@@ -9,7 +9,8 @@
         "drupal/commerce": "^2.2",
         "drupal/search_api_solr": "^1.2",
         "drupal/zurb_foundation": "6.0-alpha3",
-        "drupal/profile": "^1.0@RC"
+        "drupal/profile": "^1.0@RC",
+        "drupal/geolocation": "^1.11"
     },
     "replace": {
         "drupal/core": "^8.4"
