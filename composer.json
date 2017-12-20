@@ -8,7 +8,8 @@
         "wikimedia/composer-merge-plugin": "^1.4",
         "drupal/commerce": "^2.2",
         "drupal/search_api_solr": "^1.2",
-        "drupal/zurb_foundation": "6.0-alpha3"
+        "drupal/zurb_foundation": "6.0-alpha3",
+        "drupal/profile": "^1.0@RC"
     },
     "replace": {
         "drupal/core": "^8.4"
