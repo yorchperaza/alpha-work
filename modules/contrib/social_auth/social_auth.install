@@ -5,37 +5,20 @@
  * Install, update and uninstall functions for Social Auth.
  */
 
-/**
- * Implements hook_update_N().
- */
-function social_auth_update_8001(&$sandbox) {
-  $config = \Drupal::service('config.factory')->getEditable('social_auth.settings');
-  // Set and save new message value.
-  $config->set('post_login_path', 'user')
-    ->set('redirect_user_form', FALSE)
-    ->set('disable_admin_login', TRUE)
-    ->set('disabled_roles', array())
-    ->save();
-}
+use Drupal\social_api\Utility\SocialApiImplementerInstaller;
 
 /**
- * Implements hook_update_N().
- *
- * PathValidator requires path to begin with '/', '?', or '#'.
- *
- * This update makes sure that if the post login value was "user" (the previous
- * default value), it is changed to "/user". This also changes the configuration
- * key post_login_path to post_login.
+ * Implements hook_requirements().
  */
-function social_auth_update_8002(&$sandbox) {
-  $config = \Drupal::configFactory()->getEditable('social_auth.settings');
-  $post_login = $config->get('post_login_path');
+function social_auth_requirements($phase) {
+  $requirements = [];
 
-  if ($post_login == 'user') {
-    $config->set('post_login', '/user');
+  // Social API should be installed at this point in order to check library.
+  \Drupal::service('module_installer')->install(['social_api']);
+
+  if ($phase == 'install') {
+    $requirements = SocialApiImplementerInstaller::checkLibrary('social_auth', 'Social Auth', 'league/oauth2-client', '2.0', '3.0');
   }
-  else {
-    $config->set('post_login', $post_login);
-  }
-  $config->save();
+
+  return $requirements;
 }

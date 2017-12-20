@@ -4,10 +4,10 @@ description: Allows login using different social networking services
 # core: 8.x
 package: Social
 dependencies:
-  - social_api
+  - social_api (>= 8.x-2.x)
 
-# Information added by Drupal.org packaging script on 2017-08-03
-version: '8.x-1.0'
+# Information added by Drupal.org packaging script on 2017-11-16
+version: '8.x-2.0-beta2'
 core: '8.x'
 project: 'social_auth'
-datestamp: 1501779246
+datestamp: 1510864090

@@ -11,8 +11,9 @@
         "drupal/zurb_foundation": "6.0-alpha3",
         "drupal/profile": "^1.0@RC",
         "drupal/geolocation": "^1.11",
-        "drupal/social_auth_google": "2.0-beta1",
-        "drupal/social_auth_facebook": "2.0-beta1"
+        "drupal/social_auth": "2.0-beta2",
+        "drupal/social_auth_facebook": "2.0-beta1",
+        "drupal/social_auth_google": "2.0-beta1"
     },
     "replace": {
         "drupal/core": "^8.4"
